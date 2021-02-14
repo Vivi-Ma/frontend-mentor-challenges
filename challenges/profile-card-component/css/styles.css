@@ -2,6 +2,7 @@ body {
   background-color: #19A2AE;
   font-family: 'Kumbh Sans', sans-serif;
   text-align: center;
+  overflow: hidden;
 }
 
 h3 {
@@ -13,21 +14,24 @@ h3 {
 
 p {
   color: #6A6F81;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: 400;
   letter-spacing: 0.1rem;
   margin: 0 2% 0 2%;
-}
+  }
 
 hr {
   color: #969696;
   margin-top: 8%;
   margin-bottom: 4%;
+  opacity: 0.2;
 }
 
 .container {
   position: absolute;
   background-color: #FFF;
+  box-shadow: 10px 20px 20px -10px rgba(0, 0, 0, 0.2);
+  /* https://css-tricks.com/almanac/properties/b/box-shadow/ */
   border-radius: 15px;
   left: 50%;
   top: 50%;
@@ -72,34 +76,25 @@ hr {
 
 .background-top {
   position: absolute;
-  width: auto;
-  height: auto;
-  left: -340px;
-  top: -450px;
-}
+  left: 0;
+  top: 0;
+  transform: translate(-25%,-55%);
+  }
 
 .background-bottom {
+  background-size: cover;
   position: absolute;
-  width: auto;
-  height: auto;
-  right: -270px;
-  bottom: -620px;
+  right: 0;
+  bottom: 0;
+  transform: translate(25%, 65%);
 }
+
 
 #age {
   color: #6A6F81;
   font-weight: 400;
 }
 
-@media (max-width: 650px) {
-    .col-s-9 {
-    width: 75%;
-  }
-
-  .col-s-12 {
-    width: 100%;
-  }
-}
 
 /* .attribution {
   font-size: 11px;
