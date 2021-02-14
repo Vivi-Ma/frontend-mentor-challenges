@@ -27,6 +27,8 @@ hr {
   opacity: 0.2;
 }
 
+/* Profile Card */
+
 .container {
   position: absolute;
   background-color: #FFF;
@@ -36,9 +38,8 @@ hr {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  margin: auto;
-  width: auto;
-  height: 380px;
+  height: 370px;
+  max-width: 100%;
 }
 
 .firstrow {
@@ -49,12 +50,13 @@ hr {
 .pattern-card-img {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 .secondrow {
   position: relative;
-  bottom: 50px;
+  transform: translate(0, -25%);
   z-index: 1;
 }
 
@@ -66,13 +68,28 @@ hr {
   height: auto;
 }
 
+#age {
+  color: #6A6F81;
+  font-weight: 400;
+}
+
+#location {
+  font-size: 0.8rem;
+}
+
 .thirdrow {
   display: flex;
   justify-content: space-between;
-  padding: 5% 13% 5% 13%;
+  padding: 2% 10% 7% 8%;
   position: relative;
-  bottom: 50px;
+  transform: translate(0, -65%);
 }
+
+.column {
+  padding: 2% 7% 2% 5%;
+}
+
+/* Background Images */
 
 .background-top {
   position: absolute;
@@ -82,17 +99,20 @@ hr {
   }
 
 .background-bottom {
-  background-size: cover;
   position: absolute;
   right: 0;
   bottom: 0;
   transform: translate(25%, 65%);
 }
 
+.pattern-top-img {
+  height: auto;
+  max-width: 100%;
+}
 
-#age {
-  color: #6A6F81;
-  font-weight: 400;
+.pattern-bottom-img {
+  height: auto;
+  max-width: 100%;
 }
 
 
