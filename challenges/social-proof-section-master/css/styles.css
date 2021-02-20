@@ -1,73 +1,116 @@
 body {
   font-family: 'Spartan', sans-serif;
-
+  overflow: hidden;
 }
+
 h1 {
   color: hsl(300, 43%, 22%);
   font-weight: 700;
   font-size: 3rem;
 }
 
+h4 {
+  color: hsl(300, 43%, 22%);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 h5 {
   color: #fff;
+  margin: 2%;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 h6 {
   color: hsl(333, 80%, 67%);
+  font-size: 1rem;
   font-weight: 400;
+  margin: 2%;
 }
 
 p {
   color: hsl(300, 24%, 96%);
-  line-height: 1.6;
-  font-size: 0.8rem;
+  line-height: 1.8;
+  font-size: 1rem;
 }
 
 .grid-container-one {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
   background-color: #fff;
-  padding: 20px;
+  margin: 5% 10% 2% 10%;
 }
 
 .intro-text {
-  width: 50%;
-  margin: 2%;
+  width: 65%;
+  margin-right: 10%;
 }
 
 #intro {
   color: hsl(303, 10%, 53%);
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.star-ratings {
+  margin-top: 4%;
+  margin-left: 20%;
 }
 
 .star-rating-single {
   background-color: hsl(300, 24%, 96%);
   border-radius: 10px;
-  color: hsl(300, 43%, 22%);
-  font-weight: bold;
-  margin: 4%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin-top: 3.5%;
+  margin-right: 5%;
   padding: 1%;
+  /* width: 70%; */
+}
+
+.stars {
+ margin: auto;
+ max-width: 100%;
+ max-height: 100%;
+ letter-spacing: 0.4rem;
+}
+
+.rating {
+  margin-left: 0;
+}
+
+/* shifting the first two star ratings left */
+#upper-stars{
+  transform: translate(-120px, 0);
+}
+
+#middle-stars {
+  transform: translate(-60px, 0);
 }
 
 .grid-container-two {
   display: grid;
   grid-template-columns: auto auto auto;
   background-color: #fff;
-  padding: 20px;
-
+  margin: 2% 9%;
 }
 
 .testimonial-single {
   background-color: hsl(300, 43%, 22%);
-  border: 30px solid hsl(300, 43%, 22%);
+  border: 40px solid hsl(300, 43%, 22%);
+  border-top: 45px solid hsl(300, 43%, 22%);
   border-radius: 10px;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 20% 80% auto;
   margin: 4%;
+  width: 75%;
+  height: auto;
 }
 
 .profile-img {
   border-radius: 100px;
+  width: 80%;
 }
 
 .profile {
@@ -87,14 +130,23 @@ p {
   grid-column-end: 3;
 }
 
-/* .test-one {
-  align-self: flex-start;
+/* shifting middle- and right box a bit down */
+#middle-box {
+  transform: translate(0,20px);
 }
 
-.test-two {
-  align-self: center;
+#right-box {
+  transform: translate(0,40px);
 }
 
-.test-one {
-  align-self: flex-end;
-} */
+.background-top {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.background-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
