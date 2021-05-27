@@ -1,30 +1,34 @@
 body {
   font-family: 'Spartan', sans-serif;
-  overflow: hidden;
+  padding: 80px 150px;
+  background: url("../images/bg-pattern-top-desktop.svg") no-repeat fixed left top, url("../images/bg-pattern-bottom-desktop.svg") no-repeat fixed right bottom;
 }
 
 h1 {
   color: hsl(300, 43%, 22%);
   font-weight: 700;
   font-size: 3rem;
+  line-height: 1.1;
+  margin-block-end: 0em;
+}
+
+h4, h5, h6, p {
+  font-size: 0.8rem;
 }
 
 h4 {
   color: hsl(300, 43%, 22%);
   font-weight: bold;
-  font-size: 1rem;
 }
 
 h5 {
   color: #fff;
   margin: 2%;
-  font-size: 1rem;
   font-weight: 500;
 }
 
 h6 {
   color: hsl(333, 80%, 67%);
-  font-size: 1rem;
   font-weight: 400;
   margin: 2%;
 }
@@ -32,80 +36,98 @@ h6 {
 p {
   color: hsl(300, 24%, 96%);
   line-height: 1.8;
-  font-size: 1rem;
-}
-
-.grid-container-one {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  background-color: #fff;
-  margin: 5% 10% 2% 10%;
-}
-
-.intro-text {
-  width: 65%;
-  margin-right: 10%;
-}
+  }
 
 #intro {
   color: hsl(303, 10%, 53%);
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
-.star-ratings {
-  margin-top: 4%;
-  margin-left: 20%;
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "one one one two two two"
+    "one one one three three three"
+    "one one one four four four"
+    "five five six six seven seven";
+  column-gap: 30px;
+  row-gap: 5px;
 }
+
+.one {
+  grid-area: one;
+  margin-right: 70px;
+}
+
+.two {
+  grid-area: two;
+  max-height: 60px;
+  margin-right: 80px;
+  margin-top: 40px;
+}
+
+.three {
+  grid-area: three;
+  max-height: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.four {
+  grid-area: four;
+  max-height: 60px;
+  margin-left: 80px;
+}
+
+.five {
+  grid-area: five;
+  margin-bottom: 45px;
+  margin-top: 50px;
+}
+
+.six {
+  grid-area: six;
+  margin-bottom: 30px;
+  margin-top: 65px;
+}
+
+.seven {
+  grid-area: seven;
+  margin-bottom: 15px;
+  margin-top: 80px;
+  }
 
 .star-rating-single {
   background-color: hsl(300, 24%, 96%);
   border-radius: 10px;
-  display: grid;
-  grid-template-columns: 40% 60%;
-  margin-top: 3.5%;
-  margin-right: 5%;
-  padding: 1%;
-  /* width: 70%; */
+  display: flex;
+  flex-direction: row;
+  /* grid-template-columns: 40% 60%; */
 }
 
 .stars {
- margin: auto;
- max-width: 100%;
- max-height: 100%;
- letter-spacing: 0.4rem;
+  margin: auto 40px;
+  max-width: 100%;
+  max-height: 100%;
+  letter-spacing: 0.4rem;
 }
 
 .rating {
-  margin-left: 0;
-}
-
-/* shifting the first two star ratings left */
-#upper-stars{
-  transform: translate(-120px, 0);
-}
-
-#middle-stars {
-  transform: translate(-60px, 0);
-}
-
-.grid-container-two {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #fff;
-  margin: 2% 9%;
+  margin: auto auto auto 0px;
 }
 
 .testimonial-single {
   background-color: hsl(300, 43%, 22%);
-  border: 40px solid hsl(300, 43%, 22%);
+  border: 30px solid hsl(300, 43%, 22%);
   border-top: 45px solid hsl(300, 43%, 22%);
   border-radius: 10px;
   display: grid;
   grid-template-columns: 20% 80% auto;
-  margin: 4%;
-  width: 75%;
   height: auto;
+  width: auto;
 }
 
 .profile-img {
@@ -130,23 +152,71 @@ p {
   grid-column-end: 3;
 }
 
-/* shifting middle- and right box a bit down */
-#middle-box {
-  transform: translate(0,20px);
+@media screen and (min-width: 1580px) {
+  body {
+    padding: 80px 200px;
+  }
+
+  .wrapper {
+    column-gap: 50px;
+  }
 }
 
-#right-box {
-  transform: translate(0,40px);
+@media screen and (min-width: 960px) and (max-width: 1350px) {
+  .star-rating-single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.rating {
+  margin: auto;
 }
 
-.background-top {
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 
-.background-bottom {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+@media screen and (max-width: 959px) {
+  body {
+    background: url("../images/bg-pattern-top-mobile.svg") no-repeat fixed left top, url("../images/bg-pattern-bottom-mobile.svg") no-repeat fixed right bottom;
+    padding: 20px;
+  }
+
+  h1, h4, #intro {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(7, auto);
+    row-gap: 15px;
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "six"
+      "seven";
+  }
+
+  .one, .two, .three, .four, .five, .six, .seven {
+    margin: auto;
+    }
+
+  .one, .two, .three, .four {
+    width: 100%;
+  }
+
+.star-rating-single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stars, .rating {
+  margin: auto;
+}
 }
