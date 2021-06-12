@@ -12,47 +12,48 @@ document.getElementById("button").addEventListener("click", checkForm);
 
 function checkForm() {
 
+// check if first name is filled
   if (firstName.value.length == 0) {
-    document.getElementById("firstName").style.borderColor = "hsl(0, 100%, 74%)";
-    document.getElementById("firstName").style.background = "url('public/images/icon-error.svg') 90% 50% no-repeat";
+    firstName.style.borderColor = "hsl(0, 100%, 74%)";
+    firstName.style.background = "url('public/images/icon-error.svg') 90% 50% no-repeat";
     document.getElementById("errorFirst").innerHTML = "First Name cannot be empty";
   }
   else {
-    console.log("First Name filled out!");
+    console.log(firstName);
   }
 
+// check if last name is filled
   if (lastName.value.length == 0) {
-    document.getElementById("lastName").style.borderColor = "hsl(0, 100%, 74%)";
-    document.getElementById("lastName").style.background = "url('public/images/icon-error.svg') 90% 50% no-repeat";
+    lastName.style.borderColor = "hsl(0, 100%, 74%)";
+    lastName.style.background = "url('public/images/icon-error.svg') 90% 50% no-repeat";
     document.getElementById("errorLast").innerHTML = "Last Name cannot be empty";
   }
   else {
-    console.log("Last Name filled out!");
+    console.log(lastName);
   }
 
+// check if email is filled & if so, if it is filled in the correct format
   if (email.value.length == 0) {
-    document.getElementById("email").style.borderColor = "hsl(0, 100%, 74%)";
-    document.getElementById("email").style.background = "url('public/images/icon-error.svg') 90% 50% no-repeat";
+    email.style.borderColor = "hsl(0, 100%, 74%)";
+    email.style.background = "url('public/images/icon-error.svg') 90% 50% no-repeat";
     document.getElementById("errorEmail").innerHTML = "Email cannot be empty";
   }
-  else {
-    console.log("Email filled out!");
-  }
-
-  if (email.value.match(mailformat)) {
-    console.log("correct email format");
-  } else {
-    document.getElementById("email").style.borderColor = "hsl(0, 100%, 74%)";
-    document.getElementById("email").style.background = "url('public/images/icon-error.svg') 90% 50% no-repeat";
+  else if (!email.value.match(/mailformat/)) {
+    email.style.borderColor = "hsl(0, 100%, 74%)";
+    email.style.background = "url('public/images/icon-error.svg') 90% 50% no-repeat";
     document.getElementById("errorEmail").innerHTML = "Looks like this is not an email";
   }
+  else {
+    console.log(email);
+  }
 
+// check if password is filled
   if (password.value.length == 0) {
-    document.getElementById("password").style.borderColor = "hsl(0, 100%, 74%)";
-    document.getElementById("password").style.background = "url('public/images/icon-error.svg') 90% 50% no-repeat";
+    password.style.borderColor = "hsl(0, 100%, 74%)";
+    password.style.background = "url('public/images/icon-error.svg') 90% 50% no-repeat";
     document.getElementById("errorPW").innerHTML = "Password cannot be empty";
   } else {
     console.log("Password filled out!");
   }
-  
+
 };

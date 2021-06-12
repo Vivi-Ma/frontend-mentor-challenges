@@ -24,15 +24,11 @@ p {
   align-items: center;
   }
 
-.one {
+.one, .two {
   flex: 50%;
   margin: 20px;
 }
 
-.two {
-  flex: 50%;
-  margin: 20px;
-  }
 
 .three {
   background-color: hsl(248, 32%, 49%);
@@ -112,6 +108,7 @@ p {
 
   }
 
+/* responsive design */
 @media screen and (max-width: 950px) {
   body {
     background: url("../images/bg-intro-mobile.png") hsl(0, 100%, 74%);
